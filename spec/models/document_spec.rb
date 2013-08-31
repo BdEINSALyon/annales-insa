@@ -8,5 +8,9 @@ describe Document do
   it { should validate_presence_of(:original_file) }
 
   it { should belong_to(:category)}
-  it { should have_many(:pages).with_dependent(:destroy) }
+  it { should have_many(:pages)}
+
+  it { should_not allow_value("PCI").for(:departement) }
+  it { should allow_value("PC").for(:departement) }
+  it { should ensure_inclusion_of(:departement).in_array(Document::DEPARTEMENT) }
 end
