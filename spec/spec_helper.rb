@@ -19,4 +19,16 @@ RSpec.configure do |config|
 
   # Random order spec init
   config.order = "random"
+
+  config.include Devise::TestHelpers, :type => :controller
+  config.include FactoryGirl::Syntax::Methods
+
+  require 'database_cleaner'
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :truncation
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.clean
+  end
 end
