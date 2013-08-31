@@ -17,7 +17,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # User gestion
-gem 'devise'
+gem 'devise', '~> 3.0.3'
 
 group :doc do
   gem 'sdoc', require: false
@@ -27,4 +27,15 @@ end
 gem 'capistrano', group: :development
 group :production do
 	gem 'unicorn'
+end
+
+# Testing with rspec
+## Core
+gem 'rspec-rails', '~> 2.14.0', group: [:development, :test]
+
+## Matchers & test utilities
+group :test do
+  gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers', branch: 'dp-rails-four'
+  gem 'factory_girl_rails', '~> 4.2.0'
+  gem 'database_cleaner', '~> 1.1.1'
 end
