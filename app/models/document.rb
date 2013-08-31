@@ -1,5 +1,8 @@
 class Document < ActiveRecord::Base
+  include RMagick
+
 	before_save :default_value
+	after_save :create_pages
 
 	belongs_to :category
 	has_many :pages
@@ -9,7 +12,13 @@ class Document < ActiveRecord::Base
 	validates_inclusion_of :departement, in: DEPARTEMENT
 	validates_presence_of :title, :scholar_year, :original_file, :departement, :publication_year, :validated
 
+	private
+
 	def default_value
 		self.validated ||= false
+	end
+
+	def create_pages
+		pdf
 	end
 end
