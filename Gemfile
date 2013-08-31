@@ -13,6 +13,10 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 
+# Uploader
+gem 'rmagick', '~> 2.13.2'
+gem 'carrierwave', '~> 0.9.0'
+
 # Json builder
 gem 'jbuilder', '~> 1.2'
 
