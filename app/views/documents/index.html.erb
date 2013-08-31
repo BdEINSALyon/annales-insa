@@ -1,1 +1,7 @@
-<%= link_to "New Document", new_documents_path %>
+<%= link_to "New Document", new_document_path %>
+
+<% Document.all.each do |document| %>
+<p>
+	<%= link_to document.title, document %>
+</p>
+<% end %>

@@ -8,15 +8,24 @@ class DocumentsController < ApplicationController
 	def new
 		@document = Document.new
 	end
+	
+	def show
+		@document = Document.find(params[:id])
+	end
 
 	def create
 		@document = Document.new(document_params)
+
 		if @document.save
 			flash[:info] = "New document sent"
-			redirect_to @document
+			redirect_to root_path
 		else
 			render :new
 		end
+	end
+
+	def edit
+		@document = Document.find(params[:id])
 	end
 
 	def update
@@ -27,12 +36,6 @@ class DocumentsController < ApplicationController
 		end
 	end
 
-	def show
-		@document = Document.find(params[:id])
-  	respond_to do |format|
-  		format.html
-  	end
-	end
 
 	def destroy
 		@document = Document.find(params[:id])
