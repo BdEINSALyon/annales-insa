@@ -5,16 +5,12 @@ class DocumentsController < ApplicationController
 	def index		
 	end
 
-	def show
-		@document = Document.find(params[:id])
-	end
-
 	def new
 		@document = Document.new
 	end
 
 	def create
-		@document = document.new(document_params)
+		@document = Document.new(document_params)
 		if @document.save
 			flash[:info] = "New document sent"
 			redirect_to @document
@@ -24,11 +20,18 @@ class DocumentsController < ApplicationController
 	end
 
 	def update
-		@document = DOcument.find(params[:id])
+		@document = Document.find(params[:id])
 		if @document.updates_attributes(document_params)
 			flash[:info] = "Document updated"
 			redirect_to @document
 		end
+	end
+
+	def show
+		@document = Document.find(params[:id])
+  	respond_to do |format|
+  		format.html
+  	end
 	end
 
 	def destroy
@@ -37,4 +40,9 @@ class DocumentsController < ApplicationController
 
 		redirect_to root_path
 	end
+
+	private
+  def document_params
+    params.require(:document).permit(:title, :scholar_year, :publication_year, :departement, :original_file)
+  end
 end

@@ -1,7 +1,6 @@
 class Document < ActiveRecord::Base
-  include RMagick
 
-	before_save :default_value
+	before_validation :default_value
 	after_save :create_pages
 
 	belongs_to :category

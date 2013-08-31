@@ -1,0 +1,30 @@
+<%= form_for @document, :html => {:multipart => true} do |f| %>
+
+	 <% if @document.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @document.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :scholar_year %>
+  <%= f.number_field :scholar_year %>
+
+  <%= f.label :publication_year %>
+  <%= f.number_field :publication_year %>
+
+	<%= f.label :departement %>
+  <%= f.select :departement, Document::DEPARTEMENT %>
+
+
+  <%= f.file_field :original_file %>
+
+  <%= f.submit %>
+<% end %>

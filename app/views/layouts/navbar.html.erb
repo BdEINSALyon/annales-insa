@@ -18,6 +18,10 @@
   </section>
 </nav>
 
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
+
 <%= content_for(:view) ? yield(:view) : yield %>
 
 <% end %>
