@@ -12,6 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'zurb-foundation', '~> 4.3.1'
 
 # Uploader
 gem 'rmagick', '~> 2.13.2'
