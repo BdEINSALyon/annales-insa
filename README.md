@@ -1,6 +1,8 @@
 Annales-INSA
 ============
 
+[![Code Climate](https://codeclimate.com/github/BdEINSALyon/annales-insa.png)](https://codeclimate.com/github/BdEINSALyon/annales-insa) [![Build Status](https://travis-ci.org/BdEINSALyon/annales-insa.png?branch=master)](https://travis-ci.org/BdEINSALyon/annales-insa)
+
 Application des annales de l'INSA de Lyon
 
 Installation
