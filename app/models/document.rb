@@ -4,5 +4,5 @@ class Document < ActiveRecord::Base
 
 	DEPARTEMENT = ['PC', 'BIO', 'BIM', 'GCU', 'GE', 'GEN', 'GMC', 'GMD', 'GMPP', 'GI', 'IF', 'TC']
 	validates_inclusion_of :departement, in: DEPARTEMENT
-	validates_presence_of :title, :scholar_year, :departement, :publication_year
+	validates_presence_of :title, :scholar_year, :departement, :publication_year, :validated
 end

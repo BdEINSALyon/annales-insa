@@ -6,6 +6,7 @@ describe Document do
   it { should validate_presence_of(:departement)}
   it { should validate_presence_of(:publication_year) }
   it { should validate_presence_of(:original_file) }
+  it { should validate_presence_of(:validated) }
 
   it { should belong_to(:category)}
   it { should have_many(:pages)}
