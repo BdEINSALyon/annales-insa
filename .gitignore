@@ -12,3 +12,6 @@
 
 # Ignore doc directory
 /doc
+
+# Ignore the database configuration file
+/config/database.yml
