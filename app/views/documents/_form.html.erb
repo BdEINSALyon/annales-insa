@@ -1,6 +1,6 @@
 <%= form_for @document, :html => {:multipart => true} do |f| %>
 
-	 <% if @document.errors.any? %>
+   <% if @document.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>
       <ul>
@@ -14,17 +14,25 @@
   <%= f.label :title %>
   <%= f.text_field :title %>
 
-  <%= f.label :scholar_year %>
-  <%= f.number_field :scholar_year %>
-
+  <div class="row">
+    <div class="large-6 columns">
+    <%= f.label :scholar_year %>
+    <%= f.number_field :scholar_year %>
+    </div>
+    <div class="large-6 columns">
+    <%= f.label :departement %>
+    <%= f.select :departement, Document::DEPARTEMENT %>
+    </div>  
+  </div>
+  
   <%= f.label :publication_year %>
   <%= f.number_field :publication_year %>
 
-	<%= f.label :departement %>
-  <%= f.select :departement, Document::DEPARTEMENT %>
-
+  <hr>
 
   <%= f.file_field :original_file %>
 
-  <%= f.submit %>
+  <hr>
+
+  <%= f.submit "Submit", class: "button" %>
 <% end %>
