@@ -1,4 +1,9 @@
-<h1>Welcome on annales INSA</h1>
+<h1>Arrète de ramer avec Annales INSA</h1>
 
-<%= link_to "Sign Up", new_user_registration_path %>
-<%= link_to "Sign In", new_user_session_path %>
+<%= form_for("user", :url => user_session_path) do |f| %>
+  <%= f.text_field :email %>
+  <%= f.password_field :password %>
+  <%= f.check_box :remember_me %>
+  <%= f.label :remember_me %>
+  <%= f.submit 'Sign in', class: 'button' %>
+<% end %>
