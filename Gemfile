@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 1.2'
 # User gestion
 gem 'devise', '~> 3.0.3'
 
+# Tag gestion
+gem "acts-as-taggable-on", "~> 2.4.1"
+
 group :doc do
   gem 'sdoc', require: false
 end
