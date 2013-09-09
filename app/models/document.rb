@@ -1,5 +1,3 @@
-require 'RMagick'
-
 class Document < ActiveRecord::Base
 
 	after_save :create_pages

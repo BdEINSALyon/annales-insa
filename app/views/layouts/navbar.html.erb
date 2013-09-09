@@ -12,6 +12,8 @@
 
     <!-- Right Nav Section -->
     <ul class="right">
+    <li class="divider hide-for-small"></li>
+      <li><%= link_to "Add document", new_document_path %></li>
       <li class="divider hide-for-small"></li>
       <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
     </ul>
